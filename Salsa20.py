@@ -77,6 +77,7 @@ class Salsa20:
         a ^= self.rotate(d + c, 18)
         return a, b, c, d
     def execute(self, lis):
+        input = lis.copy()
         for i in range(20):
             if ((i+1)%2 == 1):
                 lis[0], lis[4], lis[8], lis[12] = self.qr(lis[0], lis[4], lis[8], lis[12])
