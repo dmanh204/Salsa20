@@ -88,6 +88,8 @@ class Salsa20:
                 lis[5], lis[6], lis[7], lis[4] = self.qr(lis[5], lis[6], lis[7], lis[4])
                 lis[10], lis[11], lis[8], lis[9] = self.qr(lis[10], lis[11], lis[8], lis[9])
                 lis[15], lis[12], lis[13], lis[14] = self.qr(lis[15], lis[12], lis[13], lis[14])
+        for i in range(16):
+            lis[i] = lis[i] + input[i]
         return lis
 
     def run(self):
